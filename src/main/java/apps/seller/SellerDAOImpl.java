@@ -1,6 +1,8 @@
 package apps.seller;
 
 
+import apps.organizer.Event;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +47,7 @@ public class SellerDAOImpl implements SellerDAO {
     @Override
     public List<Offer> getAllOffers() {
         List<Offer> offerArrayList = new ArrayList<>();
-        String sql = "SELECT id, name, description, state FROM offers";  // Correct query to select offers
+        String sql = "SELECT id, name, state FROM offers";
 
         try {
             setConnection();  // Ensure the connection is established
@@ -58,11 +60,10 @@ public class SellerDAOImpl implements SellerDAO {
                 while (rs.next()) {
                     int id = rs.getInt("id");
                     String name = rs.getString("name");
-                    String description = rs.getString("description");
                     String state = rs.getString("state");
 
                     // Add each offer to the list
-                    offerArrayList.add(new Offer(id, name, description, state));
+                    offerArrayList.add(new Offer(id, name, state));
                 }
 
             } catch (SQLException e) {
@@ -105,8 +106,7 @@ public class SellerDAOImpl implements SellerDAO {
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery(sql);
             if (rs.next()) {
-                offer = new Offer(rs.getInt("id"), rs.getString("name"),
-                        rs.getString("description"), rs.getString("state"));
+                offer = new Offer(rs.getInt("id"), rs.getString("name"), rs.getString("state"));
             }
             ps.close();
             closeConnection();
@@ -117,19 +117,37 @@ public class SellerDAOImpl implements SellerDAO {
     }
 
     @Override
-    public void addOffer(Offer offer) {
-        String sql = "INSERT INTO offers (name, description, state) VALUES (?,?,?)";
+    public void addOffer(Event event) {
+        // SQL to insert offer linked to an event
+        String sql = "INSERT INTO offers (event_id, name, state) VALUES (?, ?, ?)";
         try {
-            setConnection();
+            setConnection(); // Establish database connection
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, offer.getName());
-            ps.setString(2, offer.getDescription());
-            ps.setString(3, offer.getState());
-            ps.executeUpdate();
 
-            ps.close();
+            // Set parameters for the offer
+            ps.setInt(1, event.getId()); // Assuming the Event has an ID
+            ps.setString(2, event.getName());
+            ps.setString(3, "available");
+
+            // Execute the statement
+            int rowsAffected = ps.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Offer added successfully for event: " + event.getName());
+            } else {
+                System.out.println("Failed to add the offer for event: " + event.getName());
+            }
+
+            ps.close(); // Close the prepared statement
         } catch (SQLException e) {
+            System.out.println("An error occurred while adding the offer: " + e.getMessage());
             e.printStackTrace();
+        } finally {
+            try {
+                closeConnection(); // Ensure connection is closed
+            } catch (SQLException e) {
+                System.out.println("Failed to close the connection: " + e.getMessage());
+                e.printStackTrace();
+            }
         }
     }
 

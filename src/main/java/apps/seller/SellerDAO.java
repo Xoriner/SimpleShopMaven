@@ -1,5 +1,7 @@
 package apps.seller;
 
+import apps.organizer.Event;
+
 import java.util.List;
 
 public interface SellerDAO {
@@ -12,7 +14,7 @@ public interface SellerDAO {
 
     public Offer getOffer(int id);
 
-    public void addOffer(Offer offer);
+    public void addOffer(Event event);
 
     public void updateOffer(Offer offer);
 

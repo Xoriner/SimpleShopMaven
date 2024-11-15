@@ -57,7 +57,7 @@ public class ClientDAOImpl implements ClientDAO {
     @Override
     public List<Offer> getAllOffers() {
         List<Offer> offerArrayList = new ArrayList<>();
-        String sql = "SELECT id, name, description, state FROM offers";  // Correct query to select offers
+        String sql = "SELECT id, name, state FROM offers";  // Correct query to select offers
 
         try {
             setConnection();  // Ensure the connection is established
@@ -70,11 +70,10 @@ public class ClientDAOImpl implements ClientDAO {
                 while (rs.next()) {
                     int id = rs.getInt("id");
                     String name = rs.getString("name");
-                    String description = rs.getString("description");
                     String state = rs.getString("state");
 
                     // Add each offer to the list
-                    offerArrayList.add(new Offer(id, name, description, state));
+                    offerArrayList.add(new Offer(id, name, state));
                 }
 
             } catch (SQLException e) {
