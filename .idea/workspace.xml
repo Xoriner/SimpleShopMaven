@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84274bdb-9c87-4e4b-8db3-b65caf7dca60" name="Changes" comment="Organizer and Seller improvements">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c5e657a0-ae9b-4213-a846-32f772ecf862.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c5e657a0-ae9b-4213-a846-32f772ecf862.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database" beforeDir="false" afterPath="$PROJECT_DIR$/database" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/client/ClientDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/client/ClientDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/organizer/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/organizer/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/organizer/Organizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/organizer/Organizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/organizer/OrganizerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/organizer/OrganizerDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/seller/Seller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAOImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,43 +48,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Client.executor": "Run",
-    "Application.Main.executor": "Debug",
-    "Application.Organizer.executor": "Run",
-    "Application.Seller (2).executor": "Run",
-    "Application.Seller.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/terra/IdeaProjects/pleasework/lab03_pop/src/main/java",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/terra/IdeaProjects/pleasework/lab03_pop/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Client.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.Organizer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Seller (2).executor&quot;: &quot;Run&quot;,
+    &quot;Application.Seller.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/terra/IdeaProjects/pleasework/lab03_pop/src/main/java&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/terra/IdeaProjects/pleasework/lab03_pop/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\terra\IdeaProjects\pleasework\lab03_pop\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Organizer">
+  <component name="RunManager" selected="Application.Client">
     <configuration name="Client" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="apps.client.Client" />
       <module name="lab03_pop" />
@@ -173,6 +165,7 @@
       <workItem from="1731649176503" duration="3179000" />
       <workItem from="1731673435739" duration="5354000" />
       <workItem from="1731678985012" duration="3323000" />
+      <workItem from="1731682612185" duration="28000" />
     </task>
     <task id="LOCAL-00001" summary="Moving to Maven">
       <option name="closed" value="true" />
@@ -278,7 +271,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731673276566</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Organizer and Seller improvements">
+      <option name="closed" value="true" />
+      <created>1731682481424</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1731682481424</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,7 +334,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/apps/organizer/Organizer.java</url>
-          <line>65</line>
+          <line>78</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
