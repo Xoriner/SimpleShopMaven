@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84274bdb-9c87-4e4b-8db3-b65caf7dca60" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/apps/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/apps/client/ClientApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/apps/organizer/OrganizerApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/apps/seller/DAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/apps/seller/DAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/apps/seller/Offer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/apps/seller/SellerApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-    </list>
+    <list default="true" id="84274bdb-9c87-4e4b-8db3-b65caf7dca60" name="Changes" comment="Moving to Maven" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +20,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Xoriner/SimpleShop.git",
+    "accountId": "b0e4d258-e264-40fb-8487-6adcd30dd315"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 3
 }]]></component>
@@ -58,6 +49,9 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/terra/IdeaProjects/pleasework/lab03_pop/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -82,12 +76,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731649175509</updated>
-      <workItem from="1731649176503" duration="567000" />
+      <workItem from="1731649176503" duration="905000" />
     </task>
+    <task id="LOCAL-00001" summary="Moving to Maven">
+      <option name="closed" value="true" />
+      <created>1731650046952</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731650046952</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Moving to Maven" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moving to Maven" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
