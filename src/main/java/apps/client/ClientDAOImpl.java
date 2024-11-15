@@ -42,7 +42,16 @@ public class ClientDAOImpl implements ClientDAO {
 
     @Override
     public void addClient(Client client) {
-
+        String sql = "INSERT INTO clients (name) VALUES (?)";
+        try {
+            setConnection();
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, client.getName());
+            ps.executeUpdate();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

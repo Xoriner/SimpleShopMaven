@@ -1,9 +1,5 @@
 package apps.seller;
 
-import apps.DAOImpl;
-import apps.client.Client;
-import apps.client.ClientDAOImpl;
-
 import java.util.Scanner;
 
 public class Seller {
