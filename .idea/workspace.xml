@@ -4,20 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84274bdb-9c87-4e4b-8db3-b65caf7dca60" name="Changes" comment="Moving to Maven">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/apps/client/ClientDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/apps/client/ClientDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/apps/seller/Seller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c5e657a0-ae9b-4213-a846-32f772ecf862.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c5e657a0-ae9b-4213-a846-32f772ecf862.xml" afterDir="false" />
+    <list default="true" id="84274bdb-9c87-4e4b-8db3-b65caf7dca60" name="Changes" comment="Further DAO shenanigans">
+      <change afterPath="$PROJECT_DIR$/src/main/java/apps/DAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database" beforeDir="false" afterPath="$PROJECT_DIR$/database" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/client/ClientApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/organizer/OrganizerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/organizer/Organizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/DAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/SellerApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apps/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apps/client/ClientDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/client/ClientDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apps/client/ClientDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/client/ClientDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/seller/Offer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/seller/Seller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAOImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +58,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Client.executor": "Run",
     "Application.Main.executor": "Debug",
     "Application.Seller.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -177,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731653959066</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Further DAO shenanigans">
+      <option name="closed" value="true" />
+      <created>1731659028247</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1731659028247</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +214,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Moving to Maven" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moving to Maven" />
+    <MESSAGE value="Further DAO shenanigans" />
+    <option name="LAST_COMMIT_MESSAGE" value="Further DAO shenanigans" />
   </component>
 </project>

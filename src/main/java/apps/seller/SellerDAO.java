@@ -8,6 +8,8 @@ public interface SellerDAO {
 
     public List<Offer> getAllOffers();
 
+    void displayAllOffers();
+
     public Offer getOffer(int id);
 
     public void addOffer(Offer offer);

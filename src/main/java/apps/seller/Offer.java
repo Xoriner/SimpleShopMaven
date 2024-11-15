@@ -37,4 +37,15 @@ public class Offer {
     public String getState() {
         return state;
     }
+
+    // Override toString to display offer details
+    @Override
+    public String toString() {
+        return "Offer ID: " + id + "\n" +
+                "Name: " + name + "\n" +
+                "Description: " + description + "\n" +
+                "State: " + state + "\n";
+
+    }
 }
+

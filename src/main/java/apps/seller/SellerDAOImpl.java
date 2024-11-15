@@ -75,6 +75,20 @@ public class SellerDAOImpl implements SellerDAO {
     }
 
     @Override
+    public void displayAllOffers() {
+        List<Offer> offers = getAllOffers();
+
+        if (offers.isEmpty()) {
+            System.out.println("No offers available.");
+        } else {
+            System.out.println("Available Offers:");
+            for (Offer offer : offers) {
+                System.out.println(offer); // This will call the toString() method of Offer
+            }
+        }
+    }
+
+    @Override
     public Offer getOffer(int id) {
         String sql = "SELECT * FROM offers WHERE id = ?";
         Offer offer = null;
@@ -144,13 +158,12 @@ public class SellerDAOImpl implements SellerDAO {
 
     // functions for sellers table
     public void addSeller(Seller seller) {
-        String sql = "INSERT INTO seller (name) VALUES (?)";
+        String sql = "INSERT INTO sellers (name) VALUES (?)";
         try {
             setConnection();
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, seller.getName());
             ps.executeUpdate();
-
             ps.close();
         } catch (SQLException e) {
             e.printStackTrace();

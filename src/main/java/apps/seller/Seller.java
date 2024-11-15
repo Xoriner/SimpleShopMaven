@@ -1,38 +1,47 @@
 package apps.seller;
 
+import apps.DAOImpl;
+import apps.client.Client;
+import apps.client.ClientDAOImpl;
+
 import java.util.Scanner;
 
 public class Seller {
     private int id;
     private String name;
 
-    // Constructor without ID (for new sellers)
     public Seller(String name) {
         this.name = name;
     }
 
-    // For starting multiple instances through intellij
     public static void main(String[] args) {
-        Seller seller = new Seller("adam");
-        seller.start();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome! Enter your name: ");
+        String name = scanner.nextLine();
+        Seller seller = new Seller(name);
+
+        SellerDAOImpl DAOImpl = new SellerDAOImpl();
+        DAOImpl.addSeller(seller);
+
+        seller.start(DAOImpl, scanner);
+        scanner.close();
     }
 
     public String getName() {
         return name;
     }
 
-    public void start() {
-        Scanner scanner = new Scanner(System.in);
+    public void start(SellerDAOImpl DAOImpl, Scanner scanner) {
         int option;
-        //menu
+        // menu
         do {
             System.out.println("Choose an option and press ENTER: ");
-            System.out.println("1 - ");
-            System.out.println("2 - ");
+            System.out.println("1 - View all offers");
+            System.out.println("2 - Add offer");
             System.out.println("3 - ");
             System.out.println("4 - ");
             System.out.println("5 - ");
-            System.out.println("6 - ");
+            System.out.println("6 - Quit");
 
             // Choose
             System.out.print("Choose an option and press ENTER: ");
@@ -41,11 +50,11 @@ public class Seller {
             switch (option) {
                 case 1:
                     System.out.println("You choose option 1");
-                    // Dodaj logikę dla opcji 1
+                    DAOImpl.displayAllOffers();
                     break;
                 case 2:
                     System.out.println("You choose option 2");
-                    // Dodaj logikę dla opcji 2
+                    DAOImpl.addOffer(new Offer("Balon", "10pm", "available"));
                     break;
                 case 3:
                     System.out.println("You choose option 3");
@@ -70,7 +79,6 @@ public class Seller {
 
         } while (option != 6);
 
-        scanner.close();
     }
 
 

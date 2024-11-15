@@ -14,24 +14,26 @@ public class Client {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome! Enter your name: ");
         String name = scanner.nextLine();
-
         Client client = new Client(name);
+
+        ClientDAOImpl DAOImpl = new ClientDAOImpl();
+        DAOImpl.addClient(client);
+
+        client.start(DAOImpl, scanner);
         scanner.close();
-        client.start();
     }
 
-    public void start() {
-        Scanner scanner = new Scanner(System.in);
+    public void start(ClientDAOImpl DAOImpl, Scanner scanner) {
         int option;
         // menu
         do {
             System.out.println("Choose an option and press ENTER: ");
-            System.out.println("1 - ");
+            System.out.println("1 - View all offers");
             System.out.println("2 - ");
             System.out.println("3 - ");
             System.out.println("4 - ");
             System.out.println("5 - ");
-            System.out.println("6 - ");
+            System.out.println("6 - Quit");
 
             // Choose
             System.out.print("Choose an option and press ENTER: ");
@@ -40,7 +42,7 @@ public class Client {
             switch (option) {
                 case 1:
                     System.out.println("You choose option 1");
-                    // Dodaj logikę dla opcji 1
+                    DAOImpl.displayAllOffers();
                     break;
                 case 2:
                     System.out.println("You choose option 2");
@@ -69,7 +71,6 @@ public class Client {
 
         } while (option != 6);
 
-        scanner.close();
     }
 
 
