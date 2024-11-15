@@ -26,7 +26,7 @@ public class DAOImpl implements DAO {
         if (connection != null) {
             return;
         }
-        String url = "jdbc:sqlite:files";
+        String url = "jdbc:sqlite:database";
         connection = DriverManager.getConnection(url);
     }
 
