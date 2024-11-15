@@ -2,7 +2,9 @@ package apps.seller;
 
 import java.util.List;
 
-public interface DAO {
+public interface SellerDAO {
+
+    //functions for offers table
 
     public List<Offer> getAllOffers();
 
@@ -13,5 +15,8 @@ public interface DAO {
     public void updateOffer(Offer offer);
 
     public void deleteOffer(Offer offer);
+
+
+    //functions for sellers table
 
 }

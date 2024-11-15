@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84274bdb-9c87-4e4b-8db3-b65caf7dca60" name="Changes" comment="Moving to Maven" />
+    <list default="true" id="84274bdb-9c87-4e4b-8db3-b65caf7dca60" name="Changes" comment="Moving to Maven">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/apps/client/ClientDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/apps/client/ClientDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/apps/seller/Seller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c5e657a0-ae9b-4213-a846-32f772ecf862.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c5e657a0-ae9b-4213-a846-32f772ecf862.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database" beforeDir="false" afterPath="$PROJECT_DIR$/database" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apps/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apps/client/ClientApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apps/organizer/OrganizerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/organizer/Organizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/DAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/SellerApp.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="module-info" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -36,14 +52,17 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2osD1WCn3qnlCqsTmUl1lsPUM4y" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Run",
+    "Application.Main.executor": "Debug",
+    "Application.Seller.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
@@ -58,6 +77,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -70,6 +90,26 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\terra\IdeaProjects\pleasework\lab03_pop\src\main\java" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Seller" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="apps.seller.Seller" />
+      <module name="lab03_pop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="apps.seller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Seller" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -129,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731652006624</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Moving to Maven">
+      <option name="closed" value="true" />
+      <created>1731653959066</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1731653959066</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,21 +209,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Moving to Maven" />
     <option name="LAST_COMMIT_MESSAGE" value="Moving to Maven" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/apps/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/apps/Main.java</url>
-          <line>7</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

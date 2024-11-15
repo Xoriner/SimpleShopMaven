@@ -5,7 +5,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DAOImpl implements DAO {
+public class SellerDAOImpl implements SellerDAO {
     private Connection connection = null;
 
     static {
@@ -19,7 +19,7 @@ public class DAOImpl implements DAO {
     }
 
 
-    public DAOImpl() {
+    public SellerDAOImpl() {
     }
 
     private void setConnection() throws SQLException {
@@ -38,6 +38,9 @@ public class DAOImpl implements DAO {
         connection = null;
     }
 
+
+
+    //functions for offers table
 
     @Override
     public List<Offer> getAllOffers() {
@@ -134,6 +137,21 @@ public class DAOImpl implements DAO {
             ps.setInt(1, offer.getId());
             ps.executeUpdate();
             closeConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // functions for sellers table
+    public void addSeller(Seller seller) {
+        String sql = "INSERT INTO seller (name) VALUES (?)";
+        try {
+            setConnection();
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, seller.getName());
+            ps.executeUpdate();
+
+            ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
