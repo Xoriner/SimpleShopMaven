@@ -499,7 +499,7 @@
     <routine id="190" parent="1" name="fts5"/>
     <schema id="191" parent="1" name="main">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-11-15.12:12:29</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-11-15.13:15:42</LastIntrospectionLocalTimestamp>
     </schema>
     <argument id="192" parent="16">
       <ArgumentDirection>R</ArgumentDirection>
@@ -1590,10 +1590,10 @@
     <argument id="554" parent="190">
       <Position>1</Position>
     </argument>
-    <table id="555" parent="191" name="clients"/>
-    <table id="556" parent="191" name="events"/>
-    <table id="557" parent="191" name="offers"/>
-    <table id="558" parent="191" name="orders"/>
+    <table id="555" parent="191" name="Client_orders"/>
+    <table id="556" parent="191" name="clients"/>
+    <table id="557" parent="191" name="events"/>
+    <table id="558" parent="191" name="offers"/>
     <table id="559" parent="191" name="organizers"/>
     <table id="560" parent="191" name="sellers"/>
     <table id="561" parent="191" name="sqlite_master">
@@ -1607,96 +1607,98 @@
       <Position>1</Position>
       <StoredType>integer|0s</StoredType>
     </column>
-    <column id="564" parent="555" name="name">
+    <column id="564" parent="555" name="status">
       <Position>2</Position>
       <StoredType>TEXT|0s</StoredType>
     </column>
-    <key id="565" parent="555" name="clients_pk">
+    <column id="565" parent="555" name="offer_id">
+      <Position>3</Position>
+      <StoredType>integer|0s</StoredType>
+    </column>
+    <foreign-key id="566" parent="555">
+      <ColNames>offer_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>offers</RefTableName>
+    </foreign-key>
+    <key id="567" parent="555" name="Client_orders_pk">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="566" parent="556" name="id">
+    <column id="568" parent="556" name="id">
       <AutoIncrement>1</AutoIncrement>
       <Position>1</Position>
       <StoredType>integer|0s</StoredType>
     </column>
-    <column id="567" parent="556" name="name">
+    <column id="569" parent="556" name="name">
       <Position>2</Position>
-      <StoredType>integer|0s</StoredType>
+      <StoredType>TEXT|0s</StoredType>
     </column>
-    <column id="568" parent="556" name="max_clients">
-      <Position>3</Position>
-      <StoredType>integer|0s</StoredType>
-    </column>
-    <column id="569" parent="556" name="organizer_id">
-      <Position>4</Position>
-      <StoredType>integer|0s</StoredType>
-    </column>
-    <key id="570" parent="556" name="events_pk">
+    <key id="570" parent="556" name="clients_pk">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="571" parent="557" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <Position>1</Position>
       <StoredType>integer|0s</StoredType>
     </column>
     <column id="572" parent="557" name="name">
       <Position>2</Position>
-      <StoredType>TEXT|0s</StoredType>
+      <StoredType>integer|0s</StoredType>
     </column>
-    <column id="573" parent="557" name="state">
+    <column id="573" parent="557" name="max_clients">
       <Position>3</Position>
-      <StoredType>TEXT|0s</StoredType>
+      <StoredType>integer|0s</StoredType>
     </column>
-    <column id="574" parent="557" name="seller_id">
+    <column id="574" parent="557" name="organizer_id">
       <Position>4</Position>
       <StoredType>integer|0s</StoredType>
     </column>
-    <column id="575" parent="557" name="event_id">
+    <key id="575" parent="557" name="events_pk">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="576" parent="558" name="id">
+      <Position>1</Position>
+      <StoredType>integer|0s</StoredType>
+    </column>
+    <column id="577" parent="558" name="name">
+      <Position>2</Position>
+      <StoredType>TEXT|0s</StoredType>
+    </column>
+    <column id="578" parent="558" name="state">
+      <Position>3</Position>
+      <StoredType>TEXT|0s</StoredType>
+    </column>
+    <column id="579" parent="558" name="seller_id">
+      <Position>4</Position>
+      <StoredType>integer|0s</StoredType>
+    </column>
+    <column id="580" parent="558" name="event_id">
       <Position>5</Position>
       <StoredType>integer|0s</StoredType>
     </column>
-    <foreign-key id="576" parent="557" name="offers___fk">
+    <foreign-key id="581" parent="558" name="offers_sellers_id_fk">
+      <ColNames>seller_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>sellers</RefTableName>
+    </foreign-key>
+    <foreign-key id="582" parent="558" name="offers___fk">
       <ColNames>event_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>events</RefTableName>
     </foreign-key>
-    <index id="577" parent="557" name="sqlite_autoindex_offers_1">
+    <index id="583" parent="558" name="sqlite_autoindex_offers_1">
       <ColNames>id
 event_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="578" parent="557" name="offers_pk">
+    <key id="584" parent="558" name="offers_pk">
       <ColNames>id
 event_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_offers_1</UnderlyingIndexName>
-    </key>
-    <column id="579" parent="558" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <Position>1</Position>
-      <StoredType>integer|0s</StoredType>
-    </column>
-    <column id="580" parent="558" name="status">
-      <Position>2</Position>
-      <StoredType>TEXT|0s</StoredType>
-    </column>
-    <column id="581" parent="558" name="participants_ids">
-      <Position>3</Position>
-      <StoredType>TEXT|0s</StoredType>
-    </column>
-    <column id="582" parent="558" name="organizer_id">
-      <Position>4</Position>
-      <StoredType>integer|0s</StoredType>
-    </column>
-    <column id="583" parent="558" name="offer_id">
-      <Position>5</Position>
-      <StoredType>integer|0s</StoredType>
-    </column>
-    <key id="584" parent="558" name="orders_pk">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
     </key>
     <column id="585" parent="559" name="id">
       <AutoIncrement>1</AutoIncrement>

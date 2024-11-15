@@ -106,6 +106,40 @@ public class ClientDAOImpl implements ClientDAO {
         }
     }
 
+    public boolean makeOrder(int offerId) {
+        String sql = "INSERT INTO Client_orders (status, offer_id) VALUES (?, ?)";
+        try {
+            setConnection();
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, "Pending");
+            ps.setInt(2, offerId);
+            ps.executeUpdate();
+            ps.close();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public void displayClientOrders(int offerId) {
+        String sql = "SELECT * FROM Client_orders WHERE offer_id = ?";
+        try {
+            setConnection();
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setInt(1, offerId);
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    System.out.println("Order ID: " + rs.getInt("id"));
+                    System.out.println("Status: " + rs.getString("status"));
+                    System.out.println("Offer ID: " + rs.getInt("offer_id"));
+                }
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error while fetching orders: " + e.getMessage());
+        }
+    }
 
 }
 

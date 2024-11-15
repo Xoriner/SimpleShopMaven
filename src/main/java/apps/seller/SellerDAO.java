@@ -14,11 +14,11 @@ public interface SellerDAO {
 
     public Offer getOffer(int id);
 
-    public void addOffer(Event event);
+    public void addOffer(Event event, Seller seller);
 
     public void updateOffer(Offer offer);
 
-    public void deleteOffer(Offer offer);
+    public void deleteOffer(int ask_id);
 
 
     //functions for sellers table

@@ -117,4 +117,36 @@ public class OrganizerDAOImpl {
         return events;
     }
 
+    public List<Event> getAllEvents() {
+        List<Event> events = new ArrayList<>();
+        String sql = "SELECT id, name, max_clients, organizer_id FROM events";
+        try {
+            setConnection();
+            PreparedStatement ps = connection.prepareStatement(sql);
+
+            ResultSet rs = ps.executeQuery();
+            // Iterate over the result set and retrieve each event's details
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                int maxClients = rs.getInt("max_clients");
+                int organizer_id = rs.getInt("organizer_id");
+
+                // Add each event to the list
+                events.add(new Event(id, name, maxClients, organizer_id));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                closeConnection();  // Close connection after the operation
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        return events;
+    }
+
 }

@@ -14,7 +14,7 @@ public class Seller {
         this.name = name;
     }
 
-    private int getId() {
+    int getId() {
         return id;
     }
 
@@ -55,63 +55,27 @@ public class Seller {
             switch (option) {
                 case 1:
                     System.out.println("You chose option 1: Add Offer");
-
-                    // Use OrganizerDAOImpl to fetch all events for the organizer
-                    OrganizerDAOImpl organizerDAO = new OrganizerDAOImpl(); // Ensure OrganizerDAOImpl is instantiated
-                    List<Event> events = organizerDAO.getAllYourEvents(getId()); // Assuming getId() gets the organizer's ID
-
-                    if (events.isEmpty()) {
-                        System.out.println("No events available to add offers.");
-                        break;
-                    }
-
-                    // Display events to the user
-                    System.out.println("Available events:");
-                    for (int i = 0; i < events.size(); i++) {
-                        Event event = events.get(i);
-                        System.out.println((i + 1) + ". " + event.getName() + " (ID: " + event.getId() + ")");
-                    }
-
-                    // Prompt user to select an event
-                    System.out.println("Enter the number of the event for which you want to add an offer:");
-                    int eventChoice;
-                    while (true) {
-                        try {
-                            eventChoice = Integer.parseInt(scanner.nextLine());
-                            if (eventChoice < 1 || eventChoice > events.size()) {
-                                System.out.println("Invalid choice. Please enter a number between 1 and " + events.size() + ":");
-                                continue;
-                            }
-                            break;
-                        } catch (NumberFormatException e) {
-                            System.out.println("Invalid input. Please enter a valid number:");
-                        }
-                    }
-
-                    // Get the selected event
-                    Event selectedEvent = events.get(eventChoice - 1);
-
-                    // Add the offer for the selected event
-                    try {
-                        SellerDAOImpl daoImpl = new SellerDAOImpl(); // Instantiate the correct DAO
-                        daoImpl.addOffer(selectedEvent);
-                        System.out.println("Offer added successfully for event: " + selectedEvent.getName());
-                    } catch (Exception e) {
-                        System.out.println("An error occurred while adding the offer: " + e.getMessage());
-                        e.printStackTrace();
-                    }
+                    DAOImpl.addingOffers(this, scanner);
                     break;
                 case 2:
-                    System.out.println("You choose option 2");
+                    System.out.println("You choose option 2: View offers");
                     DAOImpl.displayAllOffers();
                     break;
                 case 3:
-                    System.out.println("You choose option 3");
-                    // Dodaj logikę dla opcji 3
+                    System.out.println("You choose option 3: Update Offer");
+                    System.out.println("What is the id of the offer you would like to update?");
+                    int ask_id = scanner.nextInt();
+                    System.out.println("What is the name that you would like to change it to?");
+                    String asked_name = scanner.nextLine();
+                    System.out.println("What is the state you would to change it to?");
+                    String asked_state = scanner.nextLine();
+                    DAOImpl.updateOffer(new Offer(ask_id, asked_name, asked_state));
                     break;
                 case 4:
-                    System.out.println("You choose option 4");
-                    // Dodaj logikę dla opcji 4
+                    System.out.println("You choose option 4: Delete Offer");
+                    System.out.println("What is the id of the offer you would like to delete?");
+                    ask_id = scanner.nextInt();
+                    DAOImpl.deleteOffer(ask_id);
                     break;
                 case 5:
                     System.out.println("You choose option 5");

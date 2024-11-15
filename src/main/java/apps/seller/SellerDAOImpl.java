@@ -2,10 +2,14 @@ package apps.seller;
 
 
 import apps.organizer.Event;
-
+import apps.organizer.OrganizerDAOImpl;
+import apps.organizer.Event;
+import apps.organizer.OrganizerDAOImpl;
+import java.util.List;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class SellerDAOImpl implements SellerDAO {
     private Connection connection = null;
@@ -117,9 +121,9 @@ public class SellerDAOImpl implements SellerDAO {
     }
 
     @Override
-    public void addOffer(Event event) {
+    public void addOffer(Event event, Seller seller) {
         // SQL to insert offer linked to an event
-        String sql = "INSERT INTO offers (event_id, name, state) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO offers (event_id, name, state, seller_id) VALUES (?, ?, ?, ?)";
         try {
             setConnection(); // Establish database connection
             PreparedStatement ps = connection.prepareStatement(sql);
@@ -128,6 +132,7 @@ public class SellerDAOImpl implements SellerDAO {
             ps.setInt(1, event.getId()); // Assuming the Event has an ID
             ps.setString(2, event.getName());
             ps.setString(3, "available");
+            ps.setInt(4, seller.getId());
 
             // Execute the statement
             int rowsAffected = ps.executeUpdate();
@@ -153,27 +158,36 @@ public class SellerDAOImpl implements SellerDAO {
 
     @Override
     public void updateOffer(Offer offer) {
-        String sql = "UPDATE offers SET state = ?" + "WHERE id = ?";
+        String sql = "UPDATE offers SET state = ?, name = ? WHERE id = ?";
         try {
-            setConnection();
+            setConnection(); // Assuming this sets up the database connection
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, offer.getState());
-            ps.setInt(2, offer.getId());
-            ps.executeUpdate();
-            ps.close();
-            closeConnection();
+
+            ps.setString(1, offer.getState()); // Set the state
+            ps.setString(2, offer.getName());  // Set the name
+            ps.setInt(3, offer.getId());       // Set the ID to identify the offer
+
+            int rowsUpdated = ps.executeUpdate(); // Execute the update
+            if (rowsUpdated > 0) {
+                System.out.println("Offer with ID " + offer.getId() + " updated successfully.");
+            } else {
+                System.out.println("No offer found with ID " + offer.getId() + ".");
+            }
+
+            ps.close(); // Close the PreparedStatement
+            closeConnection(); // Close the database connection
         } catch (SQLException e) {
-            e.printStackTrace();
+            e.printStackTrace(); // Print the error for debugging
         }
     }
 
     @Override
-    public void deleteOffer(Offer offer) {
+    public void deleteOffer(int ask_id) {
         String sql = "DELETE FROM offers WHERE id = ?";
         try {
             setConnection();
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setInt(1, offer.getId());
+            ps.setInt(1, ask_id);
             ps.executeUpdate();
             closeConnection();
         } catch (SQLException e) {
@@ -192,6 +206,50 @@ public class SellerDAOImpl implements SellerDAO {
             ps.executeUpdate();
             ps.close();
         } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void addingOffers(Seller seller, Scanner scanner) {
+        // Use OrganizerDAOImpl to fetch all events for the organizer
+        OrganizerDAOImpl organizerDAO = new OrganizerDAOImpl(); // Ensure OrganizerDAOImpl is instantiated
+        List<Event> events = organizerDAO.getAllEvents();
+
+        if (events.isEmpty()) {
+            System.out.println("No events available to add offers.");
+            return;
+        }
+
+        // Display events to the user
+        System.out.println("Available events:");
+        for (int i = 0; i < events.size(); i++) {
+            Event event = events.get(i);
+            System.out.println((i + 1) + ". " + event.getName() + " (ID: " + event.getId() + ")");
+        }
+
+        // Prompt user to select an event
+        System.out.println("Enter the number of the event for which you want to add an offer:");
+        int eventChoice;
+        while (true) {
+            try {
+                eventChoice = Integer.parseInt(scanner.nextLine());
+                if (eventChoice < 1 || eventChoice > events.size()) {
+                    System.out.println("Invalid choice. Please enter a number between 1 and " + events.size() + ":");
+                    continue;
+                }
+                break;
+            } catch (NumberFormatException e) {
+            }
+        }
+
+        // Get the selected event
+        Event selectedEvent = events.get(eventChoice - 1);
+
+        // Add the offer for the selected event
+        try {
+            SellerDAOImpl daoImpl = new SellerDAOImpl(); // Instantiate the correct DAO
+            daoImpl.addOffer(selectedEvent, seller);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

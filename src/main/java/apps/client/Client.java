@@ -31,7 +31,7 @@ public class Client {
             System.out.println("1 - View all offers");
             System.out.println("2 - Make an order");
             System.out.println("3 - Check your orders");
-            System.out.println("4 - Confirm participation");
+            System.out.println("4 - Ask to confirm participation");
             System.out.println("0 - Quit");
 
             // Choose
@@ -40,20 +40,28 @@ public class Client {
 
             switch (option) {
                 case 1:
-                    System.out.println("You choose option 1");
+                    System.out.println("You choose option 1: View all offers");
                     DAOImpl.displayAllOffers();
                     break;
                 case 2:
-                    System.out.println("You choose option 2");
+                    System.out.println("You chose option 2: Make an order");
+                    System.out.print("Enter offer ID to order: ");
+                    int offerId = scanner.nextInt();
+                    scanner.nextLine(); // Consume newline
 
+                    if (DAOImpl.makeOrder(offerId)) {
+                        System.out.println("Order successfully created!");
+                    } else {
+                        System.out.println("Failed to create the order. Please check the input and try again.");
+                    }
                     break;
                 case 3:
-                    System.out.println("You choose option 3");
-                    // Dodaj logikę dla opcji 3
+                    System.out.println("You choose option 3 - Check your orders");
+                    DAOImpl.displayClientOrders(id);
                     break;
                 case 4:
                     System.out.println("You choose option 4");
-                    // Dodaj logikę dla opcji 4
+
                     break;
                 case 0:
                     System.out.println("Quitting the App. Goodbye!");
