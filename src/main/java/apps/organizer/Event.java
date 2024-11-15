@@ -36,4 +36,12 @@ public class Event {
     public int getId() {
         return id;
     }
+
+    public int getMaxClients() {
+        return max_clients;
+    }
+
+    public void setMaxClients(int i) {
+        this.max_clients = i;
+    }
 }

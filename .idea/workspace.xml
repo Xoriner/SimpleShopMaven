@@ -5,20 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84274bdb-9c87-4e4b-8db3-b65caf7dca60" name="Changes" comment="Organizer and Seller improvements">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/71ae093c-c99e-42d7-ae5a-7964c4922017.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/71ae093c-c99e-42d7-ae5a-7964c4922017/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/729f64e6-6f24-4046-8e4e-86dd271a204d.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/729f64e6-6f24-4046-8e4e-86dd271a204d/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/c5e657a0-ae9b-4213-a846-32f772ecf862.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c5e657a0-ae9b-4213-a846-32f772ecf862.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fc38f2e1-3116-49f2-abf7-22796d27eca5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fc38f2e1-3116-49f2-abf7-22796d27eca5/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database" beforeDir="false" afterPath="$PROJECT_DIR$/database" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/apps/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/client/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/apps/client/ClientDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/client/ClientDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apps/organizer/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/organizer/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apps/organizer/Organizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/organizer/Organizer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/apps/organizer/OrganizerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/organizer/OrganizerDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/seller/Seller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAOImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +61,7 @@
     "Application.Client.executor": "Run",
     "Application.Main.executor": "Debug",
     "Application.Organizer.executor": "Run",
+    "Application.Seller (2).executor": "Run",
     "Application.Seller.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -96,7 +92,46 @@
       <recent name="C:\Users\terra\IdeaProjects\pleasework\lab03_pop\src\main\java" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Organizer">
+    <configuration name="Client" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="apps.client.Client" />
+      <module name="lab03_pop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="apps.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Organizer" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="apps.organizer.Organizer" />
+      <module name="lab03_pop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="apps.organizer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Seller (2)" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="apps.seller.Seller" />
+      <module name="lab03_pop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="apps.seller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Seller" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="apps.seller.Seller" />
       <module name="lab03_pop" />
@@ -112,6 +147,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Organizer" />
+        <item itemvalue="Application.Seller (2)" />
+        <item itemvalue="Application.Client" />
         <item itemvalue="Application.Seller" />
       </list>
     </recent_temporary>
@@ -134,6 +172,7 @@
       <updated>1731649175509</updated>
       <workItem from="1731649176503" duration="3179000" />
       <workItem from="1731673435739" duration="5354000" />
+      <workItem from="1731678985012" duration="3323000" />
     </task>
     <task id="LOCAL-00001" summary="Moving to Maven">
       <option name="closed" value="true" />
@@ -279,5 +318,25 @@
     <MESSAGE value="Organizer and Seller improvements" />
     <option name="LAST_COMMIT_MESSAGE" value="Organizer and Seller improvements" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/apps/seller/SellerDAOImpl.java</url>
+          <line>122</line>
+          <properties class="apps.seller.SellerDAOImpl" method="addOffer">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/apps/organizer/Organizer.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

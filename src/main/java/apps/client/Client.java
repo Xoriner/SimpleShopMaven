@@ -60,8 +60,10 @@ public class Client {
                     DAOImpl.displayClientOrders(id);
                     break;
                 case 4:
-                    System.out.println("You choose option 4");
-
+                    System.out.println("You choose option 4 - Confirm order");
+                    System.out.println("What is the id of the order you would like to confirm?");
+                    int ask_id = scanner.nextInt();
+                    DAOImpl.clientRequestsOrderConfirmation(ask_id, this.id);
                     break;
                 case 0:
                     System.out.println("Quitting the App. Goodbye!");

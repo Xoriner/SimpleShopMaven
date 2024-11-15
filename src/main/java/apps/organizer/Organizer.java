@@ -61,6 +61,8 @@ public class Organizer {
 
                     System.out.println("Adding event...");
                     try {
+                        int a = getId();
+                        System.out.println(a);
                         DAOImpl.addEvent(name, max_clients, getId());
                         System.out.println("Event added successfully!");
                     } catch (Exception e) {

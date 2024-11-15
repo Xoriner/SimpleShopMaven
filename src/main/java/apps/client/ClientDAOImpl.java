@@ -1,6 +1,8 @@
 package apps.client;
 
 import apps.seller.Offer;
+import apps.seller.Seller;
+import apps.seller.SellerDAOImpl;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -140,6 +142,20 @@ public class ClientDAOImpl implements ClientDAO {
             System.out.println("Error while fetching orders: " + e.getMessage());
         }
     }
+
+
+    public void clientRequestsOrderConfirmation(int orderId, int clientId) {
+        // Ask the client to request confirmation
+        System.out.println("Client with ID " + clientId + " is requesting to confirm order ID " + orderId);
+        SellerDAOImpl SellerDAOImpl = new SellerDAOImpl();
+        // Let the seller validate and confirm the order
+        if (SellerDAOImpl.confirmOrder(orderId, clientId)) {
+            System.out.println("Order ID " + orderId + " has been successfully confirmed.");
+        } else {
+            System.out.println("Order confirmation failed. Please check the details.");
+        }
+    }
+
 
 }
 

@@ -1,9 +1,5 @@
 package apps.seller;
 
-import apps.organizer.Event;
-import apps.organizer.OrganizerDAOImpl;
-
-import java.util.List;
 import java.util.Scanner;
 
 public class Seller {
@@ -78,8 +74,10 @@ public class Seller {
                     DAOImpl.deleteOffer(ask_id);
                     break;
                 case 5:
-                    System.out.println("You choose option 5");
-                    // Dodaj logikę dla opcji 5
+                    System.out.println("You choose option 5: Confirm Order");
+                    System.out.println("What is the id of the order you would like to confirm?");
+                    ask_id = scanner.nextInt();
+                    DAOImpl.confirmOrder(ask_id, this.id);
                     break;
                 case 0:
                     System.out.println("Quitting the App. Goodbye!");

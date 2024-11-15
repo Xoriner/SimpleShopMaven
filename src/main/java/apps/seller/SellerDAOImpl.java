@@ -45,7 +45,6 @@ public class SellerDAOImpl implements SellerDAO {
     }
 
 
-
     //functions for offers table
 
     @Override
@@ -211,7 +210,6 @@ public class SellerDAOImpl implements SellerDAO {
     }
 
     public void addingOffers(Seller seller, Scanner scanner) {
-        // Use OrganizerDAOImpl to fetch all events for the organizer
         OrganizerDAOImpl organizerDAO = new OrganizerDAOImpl(); // Ensure OrganizerDAOImpl is instantiated
         List<Event> events = organizerDAO.getAllEvents();
 
@@ -224,7 +222,7 @@ public class SellerDAOImpl implements SellerDAO {
         System.out.println("Available events:");
         for (int i = 0; i < events.size(); i++) {
             Event event = events.get(i);
-            System.out.println((i + 1) + ". " + event.getName() + " (ID: " + event.getId() + ")");
+            System.out.println((i + 1) + ". " + event.getName() + " (ID: " + event.getId() + ", Max Clients: " + event.getMaxClients() + ")");
         }
 
         // Prompt user to select an event
@@ -239,19 +237,108 @@ public class SellerDAOImpl implements SellerDAO {
                 }
                 break;
             } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a number.");
             }
         }
 
         // Get the selected event
         Event selectedEvent = events.get(eventChoice - 1);
 
+        // Check if the event has space available
+        if (selectedEvent.getMaxClients() <= 0) {
+            System.out.println("This event is full. No more offers can be added.");
+            return;
+        }
+
         // Add the offer for the selected event
         try {
             SellerDAOImpl daoImpl = new SellerDAOImpl(); // Instantiate the correct DAO
             daoImpl.addOffer(selectedEvent, seller);
+
+            // Decrease max_clients by 1
+            selectedEvent.setMaxClients(selectedEvent.getMaxClients() - 1);
+
+            // Update max_clients in the database
+            organizerDAO.updateEventMaxClients(selectedEvent);
+
+            System.out.println("Offer added successfully. Remaining slots: " + selectedEvent.getMaxClients());
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+
+    public boolean confirmOrder(int orderId, int clientId) {
+        System.out.println("Client with ID " + clientId + " is requesting to confirm order ID " + orderId);
+        if (!validateClientBeforeConfirmation(orderId, clientId)) {
+            return false; // Validation failed, cannot confirm the order
+        }
+
+        String updateOrderSql = "UPDATE Client_orders SET status = 'Confirmed' WHERE id = ?";
+
+        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:your-database-file.db");
+             PreparedStatement ps = conn.prepareStatement(updateOrderSql)) {
+
+            // Update the order status to 'Confirmed'
+            ps.setInt(1, orderId);
+            int rowsUpdated = ps.executeUpdate();
+            if (rowsUpdated > 0) {
+                System.out.println("Order ID " + orderId + " has been confirmed.");
+                return true;
+            } else {
+                System.out.println("Failed to update the order status.");
+                return false;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
+
+    public boolean validateClientBeforeConfirmation(int orderId, int clientId) {
+        String checkClientSql = "SELECT COUNT(*) FROM Client_orders WHERE id = ? AND client_id = ?";
+        String checkClientStatusSql = "SELECT status FROM Client_orders WHERE id = ?";
+
+        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:your-database-file.db");
+             PreparedStatement checkClientPs = conn.prepareStatement(checkClientSql);
+             PreparedStatement checkStatusPs = conn.prepareStatement(checkClientStatusSql)) {
+
+            // Check if the client is associated with this order
+            checkClientPs.setInt(1, orderId);
+            checkClientPs.setInt(2, clientId);
+
+            try (ResultSet rs = checkClientPs.executeQuery()) {
+                if (rs.next() && rs.getInt(1) > 0) {
+                    // Check the order status to ensure it can be confirmed
+                    checkStatusPs.setInt(1, orderId);
+
+                    try (ResultSet statusRs = checkStatusPs.executeQuery()) {
+                        if (statusRs.next()) {
+                            String currentStatus = statusRs.getString("status");
+                            if (currentStatus.equals("Pending")) {
+                                // The client is valid and order status is Pending
+                                return true; // Valid for confirmation
+                            } else {
+                                System.out.println("The order is not in a valid state for confirmation.");
+                                return false; // Invalid state (already confirmed, cancelled, etc.)
+                            }
+                        }
+                    }
+                } else {
+                    System.out.println("The client is not associated with this order.");
+                    return false; // Client not associated with the order
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return false;
+    }
+
+
+
 
 }

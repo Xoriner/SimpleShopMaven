@@ -110,10 +110,10 @@ public class OrganizerDAOImpl {
             }
         }
 
-        for(Event event : events) {
+        /*for(Event event : events) {
         System.out.println(event);
 
-        }
+        }*/
         return events;
     }
 
@@ -149,4 +149,16 @@ public class OrganizerDAOImpl {
         return events;
     }
 
+    public void updateEventMaxClients(Event selectedEvent) {
+        String sql = "UPDATE events SET max_clients = ? WHERE id = ?";
+        try {
+            setConnection();
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setInt(1, selectedEvent.getMaxClients());
+            ps.setInt(2, selectedEvent.getId());
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
