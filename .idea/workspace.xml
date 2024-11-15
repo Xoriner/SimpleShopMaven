@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84274bdb-9c87-4e4b-8db3-b65caf7dca60" name="Changes" comment="Organizer and Seller improvements">
-      <change afterPath="$PROJECT_DIR$/src/main/java/apps/organizer/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c5e657a0-ae9b-4213-a846-32f772ecf862.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c5e657a0-ae9b-4213-a846-32f772ecf862.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database" beforeDir="false" afterPath="$PROJECT_DIR$/database" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/DAOImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/client/ClientDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/client/ClientDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/organizer/Organizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/organizer/Organizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/organizer/OrganizerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/organizer/OrganizerDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/seller/Offer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/seller/Seller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAOImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="84274bdb-9c87-4e4b-8db3-b65caf7dca60" name="Changes" comment="Organizer and Seller improvements" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -227,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731668866274</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Organizer and Seller improvements">
+      <option name="closed" value="true" />
+      <created>1731673276566</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1731673276566</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,6 +257,7 @@
     <MESSAGE value="fixed displaying all offers" />
     <MESSAGE value="Seller can view and add offers" />
     <MESSAGE value="Organizer and Seller work" />
+    <MESSAGE value="Seller can add offers based on events" />
     <MESSAGE value="Organizer and Seller improvements" />
     <option name="LAST_COMMIT_MESSAGE" value="Organizer and Seller improvements" />
   </component>
