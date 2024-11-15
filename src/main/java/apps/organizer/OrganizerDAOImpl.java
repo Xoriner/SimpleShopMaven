@@ -38,7 +38,18 @@ public class OrganizerDAOImpl {
     }
 
 
-
+    public void addEvent(String event_name, int event_max_clients, int organizer_id) {
+        String sql = "INSERT INTO events (name, max_clients, organizer_id) VALUES (?, ?, ?)";
+        try {
+            setConnection();
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, event_name);
+            ps.setInt(2, event_max_clients);
+            ps.setInt(3, organizer_id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void addOrganizer(Organizer organizer) {
         String sql = "INSERT INTO organizers (name) VALUES (?)";
@@ -48,6 +59,7 @@ public class OrganizerDAOImpl {
             ps.setString(1, organizer.getName());
             ps.executeUpdate();
             ps.close();
+            closeConnection();
         } catch (SQLException e) {
             e.printStackTrace();
         }

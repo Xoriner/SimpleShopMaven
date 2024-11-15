@@ -32,12 +32,12 @@ public class Seller {
         // menu
         do {
             System.out.println("Choose an option and press ENTER: ");
-            System.out.println("1 - View all offers");
-            System.out.println("2 - Add offer");
-            System.out.println("3 - ");
-            System.out.println("4 - ");
-            System.out.println("5 - ");
-            System.out.println("6 - Quit");
+            System.out.println("1 - Add offer");
+            System.out.println("2 - View all (your) offers");
+            System.out.println("3 - Update offer");
+            System.out.println("4 - Delete offer");
+            System.out.println("5 - Confirm order");
+            System.out.println("0 - Quit");
 
             // Choose
             System.out.print("Choose an option and press ENTER: ");
@@ -46,11 +46,11 @@ public class Seller {
             switch (option) {
                 case 1:
                     System.out.println("You choose option 1");
-                    DAOImpl.displayAllOffers();
+                    DAOImpl.addOffer(new Offer("Balon", "10pm", "available"));
                     break;
                 case 2:
                     System.out.println("You choose option 2");
-                    DAOImpl.addOffer(new Offer("Balon", "10pm", "available"));
+                    DAOImpl.displayAllOffers();
                     break;
                 case 3:
                     System.out.println("You choose option 3");
@@ -64,7 +64,7 @@ public class Seller {
                     System.out.println("You choose option 5");
                     // Dodaj logikę dla opcji 5
                     break;
-                case 6:
+                case 0:
                     System.out.println("Quitting the App. Goodbye!");
                     break;
                 default:
@@ -73,7 +73,7 @@ public class Seller {
             }
             System.out.println(); // Better readability
 
-        } while (option != 6);
+        } while (option != 0);
 
     }
 
