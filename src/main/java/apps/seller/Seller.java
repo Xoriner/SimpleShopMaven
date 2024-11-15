@@ -12,7 +12,7 @@ public class Seller {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome! Enter your name: ");
+        System.out.println("Welcome Seller! Enter your name: ");
         String name = scanner.nextLine();
         Seller seller = new Seller(name);
 

@@ -20,5 +20,5 @@ public interface SellerDAO {
 
 
     //functions for sellers table
-
+    public void addSeller(Seller seller);
 }

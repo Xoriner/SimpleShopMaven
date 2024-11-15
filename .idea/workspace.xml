@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84274bdb-9c87-4e4b-8db3-b65caf7dca60" name="Changes" comment="fixed displaying all offers">
+    <list default="true" id="84274bdb-9c87-4e4b-8db3-b65caf7dca60" name="Changes" comment="Seller can view and add offers">
+      <change afterPath="$PROJECT_DIR$/src/main/java/apps/organizer/OrganizerDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/apps/organizer/OrganizerDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c5e657a0-ae9b-4213-a846-32f772ecf862.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c5e657a0-ae9b-4213-a846-32f772ecf862.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database" beforeDir="false" afterPath="$PROJECT_DIR$/database" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/apps/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/apps/client/ClientDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/client/ClientDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apps/organizer/Organizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/organizer/Organizer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/seller/Seller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apps/seller/SellerDAOImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="module-info" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -194,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731662223620</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Seller can view and add offers">
+      <option name="closed" value="true" />
+      <created>1731663041623</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1731663041623</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +241,7 @@
     <MESSAGE value="Further DAO shenanigans" />
     <MESSAGE value="Lots of changes" />
     <MESSAGE value="fixed displaying all offers" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed displaying all offers" />
+    <MESSAGE value="Seller can view and add offers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Seller can view and add offers" />
   </component>
 </project>

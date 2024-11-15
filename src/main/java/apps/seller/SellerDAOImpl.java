@@ -164,6 +164,7 @@ public class SellerDAOImpl implements SellerDAO {
     }
 
     // functions for sellers table
+    @Override
     public void addSeller(Seller seller) {
         String sql = "INSERT INTO sellers (name) VALUES (?)";
         try {

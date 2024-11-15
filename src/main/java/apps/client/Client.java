@@ -29,11 +29,10 @@ public class Client {
         do {
             System.out.println("Choose an option and press ENTER: ");
             System.out.println("1 - View all offers");
-            System.out.println("2 - ");
-            System.out.println("3 - ");
-            System.out.println("4 - ");
-            System.out.println("5 - ");
-            System.out.println("6 - Quit");
+            System.out.println("2 - Make an order");
+            System.out.println("3 - Check your orders");
+            System.out.println("4 - Confirm participation");
+            System.out.println("0 - Quit");
 
             // Choose
             System.out.print("Choose an option and press ENTER: ");
@@ -46,7 +45,7 @@ public class Client {
                     break;
                 case 2:
                     System.out.println("You choose option 2");
-                    // Dodaj logikę dla opcji 2
+
                     break;
                 case 3:
                     System.out.println("You choose option 3");
@@ -56,11 +55,7 @@ public class Client {
                     System.out.println("You choose option 4");
                     // Dodaj logikę dla opcji 4
                     break;
-                case 5:
-                    System.out.println("You choose option 5");
-                    // Dodaj logikę dla opcji 5
-                    break;
-                case 6:
+                case 0:
                     System.out.println("Quitting the App. Goodbye!");
                     break;
                 default:
@@ -69,7 +64,7 @@ public class Client {
             }
             System.out.println(); // Better readability
 
-        } while (option != 6);
+        } while (option != 0);
 
     }
 
