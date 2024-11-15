@@ -48,40 +48,34 @@ public class ClientDAOImpl implements ClientDAO {
     @Override
     public List<Offer> getAllOffers() {
         List<Offer> offerArrayList = new ArrayList<>();
-        String sql = "INSERT INTO offers (name, description, state) VALUES (?, ?, ?)";
+        String sql = "SELECT id, name, description, state FROM offers";  // Correct query to select offers
+
         try {
-            // Ensure the connection is established
-            setConnection();
+            setConnection();  // Ensure the connection is established
 
-            // Use the connection to prepare the statement
-            try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-                ps.setString(1, "name");
-                ps.setString(2, "description");
-                ps.setString(3, "state");
+            // Prepare the SELECT statement to retrieve offers
+            try (PreparedStatement ps = connection.prepareStatement(sql);
+                 ResultSet rs = ps.executeQuery()) {
 
-                // Execute the insert statement
-                int affectedRows = ps.executeUpdate();
+                // Iterate over the result set and retrieve each offer's details
+                while (rs.next()) {
+                    int id = rs.getInt("id");
+                    String name = rs.getString("name");
+                    String description = rs.getString("description");
+                    String state = rs.getString("state");
 
-                // Retrieve the generated ID
-                if (affectedRows > 0) {
-                    try (ResultSet rs = ps.getGeneratedKeys()) {
-                        if (rs.next()) {
-                            int generatedId = rs.getInt(1);
-
-                            // Add the offer to the ArrayList
-                            offerArrayList.add(new Offer(generatedId, "Offer Name", "Offer Description", "Offer State"));
-                        }
-                    }
-                } else {
-                    System.out.println("Insertion failed, no rows affected.");
+                    // Add each offer to the list
+                    offerArrayList.add(new Offer(id, name, description, state));
                 }
-            }
 
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             try {
-                closeConnection(); // Close the connection after the operation
+                closeConnection();  // Close connection after the operation
             } catch (SQLException e) {
                 e.printStackTrace();
             }

@@ -45,30 +45,37 @@ public class SellerDAOImpl implements SellerDAO {
     @Override
     public List<Offer> getAllOffers() {
         List<Offer> offerArrayList = new ArrayList<>();
-        String sql = "INSERT INTO offers (name, description, state) VALUES (?, ?, ?)";
-        try (PreparedStatement pstmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            pstmt.setString(1, "name");
-            pstmt.setString(2, "description");
-            pstmt.setString(3, "state");
+        String sql = "SELECT id, name, description, state FROM offers";  // Correct query to select offers
 
-            // Execute the insert statement
-            int affectedRows = pstmt.executeUpdate();
+        try {
+            setConnection();  // Ensure the connection is established
 
-            // Retrieve the generated ID
-            if (affectedRows > 0) {
-                try (ResultSet rs = pstmt.getGeneratedKeys()) {
-                    if (rs.next()) {
-                        int generatedId = rs.getInt(1);
+            // Prepare the SELECT statement to retrieve offers
+            try (PreparedStatement ps = connection.prepareStatement(sql);
+                 ResultSet rs = ps.executeQuery()) {
 
-                        // Add the offer to the ArrayList
-                        offerArrayList.add(new Offer(generatedId, "Offer Name", "Offer Description", "Offer State"));
-                    }
+                // Iterate over the result set and retrieve each offer's details
+                while (rs.next()) {
+                    int id = rs.getInt("id");
+                    String name = rs.getString("name");
+                    String description = rs.getString("description");
+                    String state = rs.getString("state");
+
+                    // Add each offer to the list
+                    offerArrayList.add(new Offer(id, name, description, state));
                 }
-            } else {
-                System.out.println("Insertion failed, no rows affected.");
+
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                closeConnection();  // Close connection after the operation
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
 
         return offerArrayList;
